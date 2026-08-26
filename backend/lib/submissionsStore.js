@@ -23,10 +23,11 @@ async function get(id) {
 }
 
 async function create(submission) {
-  const doc = { ...submission, id: randomUUID(), status: "pending", submittedAt: Date.now() };
+  const id = randomUUID();
+  const doc = { ...submission, id, status: "pending", submittedAt: Date.now() };
   if (isConfigured()) {
-    const ref = await db.collection("submissions").add(doc);
-    return { id: ref.id, ...doc };
+    await db.collection("submissions").doc(id).set(doc);
+    return doc;
   }
   memoryStore.push(doc);
   return doc;

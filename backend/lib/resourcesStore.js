@@ -31,10 +31,11 @@ async function list(category) {
 }
 
 async function add(resource) {
-  const doc = { ...resource, id: randomUUID(), createdAt: Date.now() };
+  const id = randomUUID();
+  const doc = { ...resource, id, createdAt: Date.now() };
   if (isConfigured()) {
-    const ref = await db.collection("resources").add(doc);
-    return { id: ref.id, ...doc };
+    await db.collection("resources").doc(id).set(doc);
+    return doc;
   }
   memoryStore.push(doc);
   return doc;
