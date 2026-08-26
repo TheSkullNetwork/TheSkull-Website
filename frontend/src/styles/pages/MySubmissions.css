@@ -1,0 +1,92 @@
+.my-sub-auth{
+  text-align:center;
+  padding:48px 0;
+}
+.my-sub-auth p{
+  margin-bottom:16px;
+  font-size:15px;
+  color:var(--text-secondary);
+}
+
+.my-sub-empty{
+  text-align:center;
+  padding:48px 0;
+}
+.my-sub-empty p{
+  margin-bottom:16px;
+  font-size:15px;
+  color:var(--text-secondary);
+}
+
+.my-sub-error{
+  text-align:center;
+  padding:48px 0;
+  color:var(--accent-rust-bright);
+  font-family:var(--font-mono);
+  font-size:13px;
+}
+
+.my-sub-list{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  max-width:640px;
+}
+
+.my-sub-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px 24px;
+}
+.my-sub-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
+.my-sub-card-name{
+  font-family:var(--font-display);
+  font-size:18px;
+  color:var(--text-primary);
+  margin:0;
+}
+.my-sub-card-meta{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--text-muted);
+  margin:4px 0 0;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+
+.my-sub-card-details{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:6px 16px;
+  margin:0;
+}
+.my-sub-card-details dt{
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:600;
+  color:var(--text-muted);
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+.my-sub-card-details dd{
+  margin:0;
+  font-size:13px;
+  color:var(--text-secondary);
+}
+
+.my-sub-card-id{
+  margin:12px 0 0;
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--text-muted);
+}
+.my-sub-card-id code{
+  color:var(--text-secondary);
+  word-break:break-all;
+}

@@ -11,6 +11,7 @@ export default function Footer({ inviteUrl, orgUrl, isSample }) {
           <a href="/articles">Articles</a>
           <a href="/submit-resource">Submit a Resource</a>
           <a href="/submissions/status">Track Submission</a>
+          <a href="/submissions/mine">My Submissions</a>
         </div>
       </div>
     </footer>

@@ -109,4 +109,15 @@ function requireAdmin(req, res, next) {
   }
 }
 
-module.exports = { router, requireAdmin, oauthConfigured };
+function requireAuth(req, res, next) {
+  const token = req.cookies?.[COOKIE_NAME];
+  if (!token) return res.status(401).json({ error: "Not logged in." });
+  try {
+    req.user = jwt.verify(token, JWT_SECRET);
+    next();
+  } catch (err) {
+    res.status(401).json({ error: "Invalid session." });
+  }
+}
+
+module.exports = { router, requireAdmin, requireAuth, oauthConfigured };
