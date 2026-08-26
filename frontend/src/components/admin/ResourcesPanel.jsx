@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BACKEND_URL } from "../../config.js";
+import { BACKEND_URL } from "../../app/config.js";
 import { cyberCategories } from "../../data/resourcesCyber.js";
 import { devCategories } from "../../data/resourcesDev.js";
 

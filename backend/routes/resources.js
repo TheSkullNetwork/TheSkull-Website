@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const store = require("../lib/resourcesStore.js");
-const { requireAdmin } = require("../auth.js");
+const { requireAdmin } = require("../core/auth.js");
 
 router.get("/api/resources", async (req, res) => {
   try {

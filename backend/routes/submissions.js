@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const submissions = require("../lib/submissionsStore.js");
 const resources = require("../lib/resourcesStore.js");
-const { requireAdmin } = require("../auth.js");
+const { requireAdmin } = require("../core/auth.js");
 const { notifyDecision } = require("../lib/notify.js");
 const jwt = require("jsonwebtoken");
 

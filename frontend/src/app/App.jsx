@@ -1,18 +1,18 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Layout from "./components/Layout.jsx";
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import ServerInfo from "./pages/ServerInfo.jsx";
-import Staff from "./pages/Staff.jsx";
-import Resources from "./pages/Resources.jsx";
-import CybersecurityResources from "./pages/CybersecurityResources.jsx";
-import DeveloperResources from "./pages/DeveloperResources.jsx";
-import ResourceSubtypeView from "./components/ResourceSubtypeView.jsx";
-import BotCommands from "./pages/BotCommands.jsx";
-import Articles from "./pages/Articles.jsx";
-import ArticleDetail from "./pages/ArticleDetail.jsx";
-import SubmitResource from "./pages/SubmitResource.jsx";
-import Admin from "./pages/Admin.jsx";
+import Layout from "../components/Layout.jsx";
+import Home from "../pages/Home.jsx";
+import About from "../pages/About.jsx";
+import ServerInfo from "../pages/ServerInfo.jsx";
+import Staff from "../pages/Staff.jsx";
+import Resources from "../pages/Resources.jsx";
+import CybersecurityResources from "../pages/CybersecurityResources.jsx";
+import DeveloperResources from "../pages/DeveloperResources.jsx";
+import ResourceSubtypeView from "../components/ResourceSubtypeView.jsx";
+import BotCommands from "../pages/BotCommands.jsx";
+import Articles from "../pages/Articles.jsx";
+import ArticleDetail from "../pages/ArticleDetail.jsx";
+import SubmitResource from "../pages/SubmitResource.jsx";
+import Admin from "../pages/Admin.jsx";
 
 export default function App() {
   return (

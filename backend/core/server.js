@@ -1,15 +1,15 @@
 
-require("dotenv").config({ path: require("path").join(__dirname, ".env") });
+require("dotenv").config({ path: require("path").join(__dirname, "..", ".env") });
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
-const { getLiveCatalogStats, isLive } = require("./data/statsSource.js");
+const { getLiveCatalogStats, isLive } = require("../data/statsSource.js");
 const { router: authRouter, oauthConfigured } = require("./auth.js");
-const resourcesRouter = require("./routes/resources.js");
-const submissionsRouter = require("./routes/submissions.js");
-const { isConfigured: firebaseConfigured } = require("./lib/firebase.js");
-const { generalLimiter, submitLimiter, authLimiter } = require("./lib/rateLimit.js");
+const resourcesRouter = require("../routes/resources.js");
+const submissionsRouter = require("../routes/submissions.js");
+const { isConfigured: firebaseConfigured } = require("../lib/firebase.js");
+const { generalLimiter, submitLimiter, authLimiter } = require("../lib/rateLimit.js");
 
 const app = express();
 const PORT = process.env.PORT || 8787;
