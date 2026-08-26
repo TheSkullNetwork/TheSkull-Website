@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BACKEND_URL } from "../../config.js";
+import { BACKEND_URL } from "../../app/config.js";
 
 export default function SubmissionsPanel() {
   const [items, setItems] = useState([]);

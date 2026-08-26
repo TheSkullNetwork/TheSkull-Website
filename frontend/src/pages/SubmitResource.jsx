@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PageIntro from "../components/PageIntro.jsx";
 import "../styles/pages/SubmitResource.css";
-import { BACKEND_URL } from "../config.js";
+import { BACKEND_URL } from "../app/config.js";
 import { cyberCategories } from "../data/resourcesCyber.js";
 import { devCategories } from "../data/resourcesDev.js";
 
