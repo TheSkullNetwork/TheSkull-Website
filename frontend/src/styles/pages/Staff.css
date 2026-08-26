@@ -1,0 +1,44 @@
+.staff-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+  gap:16px;
+}
+.staff-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:26px;
+  transition:transform 0.15s ease, border-color 0.15s ease;
+}
+.staff-card:hover{ transform:translateY(-3px); border-color:var(--accent-violet); }
+.staff-role{
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--accent-rust-bright);
+}
+.staff-name{ font-family:var(--font-display); font-size:20px; margin-top:10px; color:var(--text-primary); }
+.staff-note{ font-size:13.5px; margin-top:8px; margin-bottom:0; }
+
+.staff-empty{
+  border:1px dashed var(--border);
+  border-radius:var(--radius);
+  padding:32px;
+  text-align:center;
+  color:var(--text-muted);
+  font-family:var(--font-mono);
+  font-size:13px;
+}
+
+.open-roles{ margin-top:48px; }
+.open-roles .resource-section-title{
+  font-family:var(--font-mono);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--accent-teal);
+  margin-bottom:16px;
+}

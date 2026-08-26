@@ -1,0 +1,57 @@
+:root{
+  
+  --bg:            #0A0B10;
+  --bg-elevated:   #12141C;
+  --bg-card:       #171A24;
+  --bg-card-hover: #1E212D;
+  --border:        #2A2E3B;
+  --border-soft:   #1E2129;
+
+  
+  --text-primary:   #F2F1F6;
+  --text-secondary: #A9AEBD;
+  --text-muted:     #6D7284;
+
+  
+  --accent-violet:  #8B6CFF;
+  --accent-violet-dim: #6B4FD1;
+  --accent-teal:    #2DD9B9;
+  --accent-teal-dim: #1FA88C;
+  --accent-rust:    #EC5F4E;
+  --accent-rust-bright: #FF7A63;
+  --accent-gold:    #F5B942;
+
+  
+  --cyber-accent:   var(--accent-rust);
+  --cyber-accent-bright: var(--accent-rust-bright);
+  --dev-accent:     var(--accent-teal);
+  --dev-accent-bright: #45F0CE;
+
+  --gradient-brand: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-teal) 100%);
+  --gradient-cyber: linear-gradient(135deg, var(--accent-rust) 0%, var(--accent-gold) 100%);
+  --gradient-dev:   linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-violet) 100%);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --wrap: 1280px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.35);
+  --shadow-glow-violet: 0 0 60px rgba(139,108,255,0.18);
+  --shadow-glow-teal: 0 0 60px rgba(45,217,185,0.16);
+  --shadow-glow-rust: 0 0 60px rgba(236,95,78,0.18);
+
+  
+  --bg-panel: var(--bg-card);
+  --bg-panel-alt: var(--bg-elevated);
+  --bone: var(--text-primary);
+  --bone-dim: var(--text-secondary);
+  --bone-faint: var(--text-muted);
+  --ink-blue: var(--accent-teal);
+  --rust: var(--accent-rust);
+  --rust-bright: var(--accent-rust-bright);
+  --line: var(--border);
+  --line-soft: var(--border-soft);
+}

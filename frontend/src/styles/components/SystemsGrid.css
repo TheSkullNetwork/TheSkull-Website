@@ -1,0 +1,24 @@
+.specimen-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(270px, 1fr));
+  gap:18px;
+}
+.specimen-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:26px 24px;
+  min-height:190px;
+  display:flex; flex-direction:column;
+  transition:transform 0.15s ease, border-color 0.15s ease;
+}
+.specimen-card:hover{ transform:translateY(-3px); border-color:var(--accent-violet); }
+.specimen-id{
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:700;
+  color:var(--accent-teal);
+  letter-spacing:0.05em;
+}
+.specimen-card h3{ font-family:var(--font-display); font-size:21px; margin-top:12px; color:var(--text-primary); }
+.specimen-card p{ font-size:14.5px; margin-top:10px; margin-bottom:0; color:var(--text-secondary); }

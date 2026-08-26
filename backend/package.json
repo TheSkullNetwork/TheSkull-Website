@@ -1,0 +1,21 @@
+{
+  "name": "theskull-backend",
+  "version": "1.0.0",
+  "description": "The Skull -- backend API (Discord OAuth, resources, submissions)",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "firebase-admin": "^14.3.0",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

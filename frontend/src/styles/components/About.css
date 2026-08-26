@@ -1,0 +1,24 @@
+.about-body p{ font-size:17px; max-width:75ch; }
+.note-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:16px;
+  margin-top:36px;
+}
+.note-card{
+  border:1px solid var(--border);
+  border-left:3px solid var(--accent-rust);
+  background:var(--bg-card);
+  padding:20px 22px;
+  border-radius:var(--radius);
+}
+.note-card p{ margin:0; font-size:14.5px; color:var(--text-secondary); }
+.note-tag{
+  font-family:var(--font-mono) !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+  color:var(--accent-teal) !important;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  margin-bottom:8px !important;
+}
