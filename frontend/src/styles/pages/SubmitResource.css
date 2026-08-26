@@ -49,5 +49,21 @@
 }
 .form-status.success{ background:rgba(45,217,185,0.1); border:1px solid var(--accent-teal); color:var(--accent-teal); }
 .form-status.error{ background:rgba(236,95,78,0.1); border:1px solid var(--accent-rust); color:var(--accent-rust-bright); }
+.form-status p{ margin:0; }
+.form-submission-id{
+  margin-top:10px;
+  font-size:13px;
+  color:var(--text-secondary);
+}
+.form-submission-id strong{
+  color:var(--text-primary);
+  word-break:break-all;
+}
+.form-submission-id a{
+  color:var(--accent-teal);
+  text-decoration:none;
+  font-weight:600;
+}
+.form-submission-id a:hover{ text-decoration:underline; }
 
 @media (max-width: 900px){ .submit-layout{ grid-template-columns:1fr; } .guidelines{ position:static; } }

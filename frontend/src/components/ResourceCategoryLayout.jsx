@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "../styles/components/ResourceCategoryLayout.css";
 import { ICONS } from "../lib/icons.js";
 
 export default function ResourceCategoryLayout({ title, desc, accent, basePath, categories }) {
   const accentVar = accent === "cyber" ? "var(--cyber-accent)" : "var(--dev-accent)";
+  const [query, setQuery] = useState("");
 
   return (
     <div className="rc-layout">
@@ -16,6 +18,17 @@ export default function ResourceCategoryLayout({ title, desc, accent, basePath, 
       </section>
 
       <section className="wrap">
+        <div className="rc-search-row">
+          <input
+            className="rc-search"
+            type="search"
+            placeholder="Search resources..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search resources"
+          />
+        </div>
+
         <div className="rc-body">
           <nav className="rc-sidebar" aria-label={`${title} categories`} style={{ "--sidebar-accent": accentVar }}>
             {categories.map((c) => {
@@ -34,7 +47,7 @@ export default function ResourceCategoryLayout({ title, desc, accent, basePath, 
           </nav>
 
           <div className="rc-content">
-            <Outlet context={{ categories, accent }} />
+            <Outlet context={{ categories, accent, query }} />
           </div>
         </div>
       </section>

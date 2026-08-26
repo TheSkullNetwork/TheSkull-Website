@@ -15,6 +15,7 @@ const initialForm = { category: "cybersecurity", subtype: "osint", name: "", url
 export default function SubmitResource() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState(null);
+  const [submittedId, setSubmittedId] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
   const activeCategory = CATEGORY_OPTIONS.find((c) => c.value === form.category);
@@ -43,6 +44,7 @@ export default function SubmitResource() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      setSubmittedId(data.submission?.id || null);
       setStatus({ type: "success", message: "Submitted — a staff member will review it soon." });
       setForm(initialForm);
     } catch (err) {
@@ -115,7 +117,17 @@ export default function SubmitResource() {
               <textarea id="note" maxLength={300} value={form.submitterNote} onChange={(e) => update("submitterNote", e.target.value)} placeholder="Context for the reviewer, not shown publicly." />
             </div>
 
-            {status && <div className={`form-status ${status.type}`}>{status.message}</div>}
+            {status && (
+              <div className={`form-status ${status.type}`}>
+                <p>{status.message}</p>
+                {status.type === "success" && submittedId && (
+                  <p className="form-submission-id">
+                    Your submission ID: <strong>{submittedId}</strong><br />
+                    <a href={`/submissions/${submittedId}/status`}>Track status →</a>
+                  </p>
+                )}
+              </div>
+            )}
 
             <button className="btn btn-seal" type="submit" disabled={submitting}>
               {submitting ? "Submitting…" : "Submit for review"}
