@@ -39,7 +39,7 @@ export default function Header({ inviteUrl }) {
         <Link to="/" className="brand">
           {!logoFailed ? (
             <img
-              src="/logo.png"
+              src="/logo.svg"
               alt="The Skull"
               className="brand-logo"
               onError={() => setLogoFailed(true)}
