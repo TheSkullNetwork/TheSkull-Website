@@ -31,6 +31,7 @@ async function getLiveCatalogStats() {
     };
     return cache.data;
   } catch (err) {
+    console.error("[stats] Failed to fetch bot stats:", err.message);
     return { live: false, profileCount: 128, skullboardCount: 47, sample: true };
   }
 }
