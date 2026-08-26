@@ -6,7 +6,7 @@ import "../styles/pages/SubmissionStatus.css";
 
 export default function SubmissionStatus() {
   const [searchParams] = useSearchParams();
-  const prefillId = searchParams.get("id") || "";
+  const prefillId = searchParams.get("id") || localStorage.getItem("theskull_last_submission") || "";
   const [id, setId] = useState(prefillId);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);

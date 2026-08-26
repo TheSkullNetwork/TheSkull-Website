@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const submissions = require("../lib/submissionsStore.js");
 const resources = require("../lib/resourcesStore.js");
-const { requireAdmin } = require("../core/auth.js");
+const { requireAdmin, requireAuth } = require("../core/auth.js");
 const { notifyDecision } = require("../lib/notify.js");
 const jwt = require("jsonwebtoken");
 
@@ -63,6 +63,23 @@ router.post("/api/submissions", async (req, res) => {
   });
 
   res.json({ submission: created });
+});
+
+router.get("/api/submissions/mine", requireAuth, async (req, res) => {
+  const all = await submissions.list();
+  const mine = all.filter((s) => s.submittedBy?.id === req.user.id);
+  res.json({
+    items: mine.map((s) => ({
+      id: s.id,
+      status: s.status,
+      name: s.name,
+      category: s.category,
+      subtype: s.subtype,
+      submittedAt: s.submittedAt,
+      reviewedAt: s.reviewedAt || null,
+      reason: s.reason || null
+    }))
+  });
 });
 
 router.get("/api/admin/submissions", requireAdmin, async (req, res) => {

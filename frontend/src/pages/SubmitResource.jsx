@@ -44,7 +44,9 @@ export default function SubmitResource() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
-      setSubmittedId(data.submission?.id || null);
+      const id = data.submission?.id || null;
+      setSubmittedId(id);
+      if (id) localStorage.setItem("theskull_last_submission", id);
       setStatus({ type: "success", message: "Submitted — a staff member will review it soon." });
       setForm(initialForm);
     } catch (err) {
