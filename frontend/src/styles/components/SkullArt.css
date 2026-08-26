@@ -1,26 +1,5 @@
 .skull-art{ position:relative; }
-.skull-art svg{ width:100%; height:auto; max-width:440px; display:block; margin:0 auto; }
-.skull-art path, .skull-art ellipse{
-  stroke:var(--text-secondary);
-  stroke-width:1.6;
-  fill:none;
-  stroke-linecap:round;
-}
-.skull-art .hatch path{ stroke-width:1; stroke:var(--accent-teal); opacity:0.6; }
-
-.draw{
-  stroke-dasharray:1600;
-  stroke-dashoffset:1600;
-  animation:draw-in 2.4s ease forwards;
-}
-.draw-1{ animation-delay:0.1s; stroke:var(--accent-violet); }
-.draw-2{ animation-delay:1.0s; }
-.draw-3{ animation-delay:1.6s; }
-.draw-4{ animation-delay:2.0s; }
-@keyframes draw-in{ to{ stroke-dashoffset:0; } }
-@media (prefers-reduced-motion: reduce){
-  .draw{ stroke-dashoffset:0; animation:none; }
-}
+.skull-art .skull-logo{ width:100%; height:auto; max-width:440px; display:block; margin:0 auto; }
 
 @media (max-width: 900px){
   .skull-art{ order:-1; max-width:280px; margin:0 auto 16px; }
