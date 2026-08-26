@@ -12,7 +12,9 @@ import BotCommands from "../pages/BotCommands.jsx";
 import Articles from "../pages/Articles.jsx";
 import ArticleDetail from "../pages/ArticleDetail.jsx";
 import SubmitResource from "../pages/SubmitResource.jsx";
+import SubmissionStatus from "../pages/SubmissionStatus.jsx";
 import Admin from "../pages/Admin.jsx";
+import NotFound from "../pages/NotFound.jsx";
 
 export default function App() {
   return (
@@ -38,9 +40,12 @@ export default function App() {
         <Route path="/articles/:slug" element={<ArticleDetail />} />
 
         <Route path="/submit-resource" element={<SubmitResource />} />
+        <Route path="/submissions/:id/status" element={<SubmissionStatus />} />
         <Route path="/admin" element={<Admin />} />
 
         <Route path="/bot" element={<BotCommands />} />
+
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

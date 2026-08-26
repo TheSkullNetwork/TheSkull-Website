@@ -18,6 +18,21 @@ function currentUser(req) {
   }
 }
 
+router.get("/api/submissions/:id/status", async (req, res) => {
+  const sub = await submissions.get(req.params.id);
+  if (!sub) return res.status(404).json({ error: "Submission not found." });
+  res.json({
+    id: sub.id,
+    status: sub.status,
+    name: sub.name,
+    category: sub.category,
+    subtype: sub.subtype,
+    submittedAt: sub.submittedAt,
+    reviewedAt: sub.reviewedAt || null,
+    reason: sub.reason || null
+  });
+});
+
 router.post("/api/submissions", async (req, res) => {
   const { category, subtype, name, url, desc, tag, submitterNote } = req.body || {};
 
