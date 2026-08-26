@@ -1,23 +1,23 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import PageIntro from "../components/PageIntro.jsx";
 import { BACKEND_URL } from "../app/config.js";
 import "../styles/pages/SubmissionStatus.css";
 
 export default function SubmissionStatus() {
-  const [id, setId] = useState("");
+  const [searchParams] = useSearchParams();
+  const prefillId = searchParams.get("id") || "";
+  const [id, setId] = useState(prefillId);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  async function handleLookup(e) {
-    e.preventDefault();
-    if (!id.trim()) return;
+  async function doLookup(submissionId) {
     setLoading(true);
     setResult(null);
     setError(null);
     try {
-      const res = await fetch(`${BACKEND_URL}/api/submissions/${id.trim()}/status`);
+      const res = await fetch(`${BACKEND_URL}/api/submissions/${submissionId}/status`);
       if (res.status === 404) throw new Error("No submission found with that ID.");
       if (!res.ok) throw new Error("Something went wrong.");
       const data = await res.json();
@@ -27,6 +27,16 @@ export default function SubmissionStatus() {
     } finally {
       setLoading(false);
     }
+  }
+
+  useEffect(() => {
+    if (prefillId) doLookup(prefillId);
+  }, []);
+
+  async function handleLookup(e) {
+    e.preventDefault();
+    if (!id.trim()) return;
+    doLookup(id.trim());
   }
 
   function formatDate(ts) {

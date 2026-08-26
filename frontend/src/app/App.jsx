@@ -40,7 +40,7 @@ export default function App() {
         <Route path="/articles/:slug" element={<ArticleDetail />} />
 
         <Route path="/submit-resource" element={<SubmitResource />} />
-        <Route path="/submissions/:id/status" element={<SubmissionStatus />} />
+        <Route path="/submissions/status" element={<SubmissionStatus />} />
         <Route path="/admin" element={<Admin />} />
 
         <Route path="/bot" element={<BotCommands />} />

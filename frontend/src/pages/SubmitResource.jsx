@@ -123,7 +123,7 @@ export default function SubmitResource() {
                 {status.type === "success" && submittedId && (
                   <p className="form-submission-id">
                     Your submission ID: <strong>{submittedId}</strong><br />
-                    <a href={`/submissions/${submittedId}/status`}>Track status →</a>
+                    <a href={`/submissions/status?id=${submittedId}`}>Track status →</a>
                   </p>
                 )}
               </div>

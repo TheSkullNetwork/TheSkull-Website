@@ -10,6 +10,7 @@ export default function Footer({ inviteUrl, orgUrl, isSample }) {
           <a href={orgUrl} target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="/articles">Articles</a>
           <a href="/submit-resource">Submit a Resource</a>
+          <a href="/submissions/status">Track Submission</a>
         </div>
       </div>
     </footer>
