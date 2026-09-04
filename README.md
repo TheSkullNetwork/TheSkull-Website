@@ -12,7 +12,7 @@ It is a real two-part app. Each half runs independently:
 TheSkull-Website/
 ├── frontend/    React site (Vite)    → what people visit
 ├── backend/     small Express API    → powers live features
-└── GUIDE.md     contributor / local setup guide
+└── CONTRIBUTING.md  contributor / local setup guide
 ```
 
 ## Quick start (local)
@@ -34,7 +34,7 @@ cd backend && npm install && npm run start    # http://localhost:8787
 cp .env.example .env                          # everything works empty
 ```
 
-See `GUIDE.md` for the full local-setup walkthrough.
+See `CONTRIBUTING.md` for the full local-setup walkthrough.
 
 ## What each part does
 
@@ -77,6 +77,6 @@ always welcome. Public rehosting: no.
 
 ## Contributing
 
-Read `GUIDE.md`. Short version: fork, run locally, PR. Don't commit
+Read `CONTRIBUTING.md`. Short version: fork, run locally, PR. Don't commit
 `.env` files, don't mix `.jsx` and `.css` folders, run `npm run build`
 before opening a PR.
