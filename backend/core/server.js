@@ -75,6 +75,10 @@ app.get("/api/stats", async (req, res) => {
   res.json({ discord, catalog });
 });
 
+app.use((req, res) => {
+  res.status(404).json({ error: "Not found.", path: req.originalUrl });
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Backend running at http://0.0.0.0:${PORT}`);
   console.log("Bot stats source: " + (isLive() ? "connected via BOT_STATS_URL" : "not configured (sample data)"));
