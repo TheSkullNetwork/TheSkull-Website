@@ -16,6 +16,9 @@ import SubmissionStatus from "../pages/SubmissionStatus.jsx";
 import MySubmissions from "../pages/MySubmissions.jsx";
 import Admin from "../pages/Admin.jsx";
 import NotFound from "../pages/NotFound.jsx";
+import Privacy from "../pages/Privacy.jsx";
+import Terms from "../pages/Terms.jsx";
+import Cookies from "../pages/Cookies.jsx";
 
 export default function App() {
   return (
@@ -46,6 +49,10 @@ export default function App() {
         <Route path="/admin" element={<Admin />} />
 
         <Route path="/bot" element={<BotCommands />} />
+
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/cookies" element={<Cookies />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>

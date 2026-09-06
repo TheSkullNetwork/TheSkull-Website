@@ -12,6 +12,9 @@ export default function Footer({ inviteUrl, orgUrl, isSample }) {
           <a href="/submit-resource">Submit a Resource</a>
           <a href="/submissions/status">Track Submission</a>
           <a href="/submissions/mine">My Submissions</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/cookies">Cookies</a>
         </div>
       </div>
     </footer>
